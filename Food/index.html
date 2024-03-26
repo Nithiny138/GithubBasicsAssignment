@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Food Details</h1>
+    </header>
+
+    <!-- Biryani Section -->
+    <section>
+        <img src="biryani-image.jpg" alt="Biryani Image">
+        <h2>Biryani</h2>
+        <p>Biryani is a flavorful and aromatic rice dish made with basmati rice, spices, and meat (chicken, lamb, or beef).</p>
+    </section>
+
+    <!-- Parotta Section -->
+    <section>
+        <img src="parotta-image.jpg" alt="Parotta Image">
+        <h2>Parotta</h2>
+        <p>Parotta is a popular South Indian layered flatbread made with all-purpose flour. It is usually served with curry or side dishes.</p>
+    </section>
+
+    <!-- Shawarma Section -->
+    <section>
+        <img src="shawarma-image.jpg" alt="Shawarma Image">
+        <h2>Shawarma</h2>
+        <p>Shawarma is a Middle Eastern street food made with thinly sliced meat (often lamb or chicken) that is stacked in a cone shape and cooked on a vertical rotisserie.</p>
+    </section>
+
+    <!-- Grill Chicken Section -->
+    <section>
+        <img src="grill-chicken-image.jpg" alt="Grill Chicken Image">
+        <h2>Grill Chicken</h2>
+        <p>Grill chicken is a delicious dish where chicken is marinated and grilled to perfection, resulting in a smoky and flavorful taste.</p>
+    </section>
+
+    <a href="votingpage.html"><button>Vote for Your Favorite</button></a>
+
+    <footer>
+        <p>&copy; 2023 Food Details Page</p>
+    </footer>
+
+    <script>
+        function showVotingForm() {
+            // You can add logic here to show a modal or navigate to a voting page
+            // alert('Redirect to voting page or show a voting form.');
+            location.href("votingpage.html");
+        }
+    </script>
+</body>
+</html>

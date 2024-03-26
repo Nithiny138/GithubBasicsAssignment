@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Voting Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        #result h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Vote for Your Favorite Food</h1>
+    </header>
+
+    <section>
+        <form id="votingForm">
+            <h2>Vote for the Best Food</h2>
+
+            <label>
+                <input type="radio" name="food" value="biryani"> Biryani
+            </label>
+
+            <label>
+                <input type="radio" name="food" value="parotta"> Parotta
+            </label>
+
+            <label>
+                <input type="radio" name="food" value="shawarma"> Shawarma
+            </label>
+
+            <label>
+                <input type="radio" name="food" value="grill-chicken"> Grill Chicken
+            </label>
+
+            <button type="button" onclick="vote()">Vote</button>
+        </form>
+
+        <div id="result">
+            <h2>Results</h2>
+            <ul>
+                <li>Biryani: <span id="biryaniCount">0</span> votes</li>
+                <li>Parotta: <span id="parottaCount">0</span> votes</li>
+                <li>Shawarma: <span id="shawarmaCount">0</span> votes</li>
+                <li>Grill Chicken: <span id="grillChickenCount">0</span> votes</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Food Voting Page</p>
+    </footer>
+
+    <script>
+        // Function to handle voting
+        function vote() {
+            const form = document.getElementById('votingForm');
+            const selectedFood = form.querySelector('input[name="food"]:checked');
+
+            if (selectedFood) {
+                // Get the current count from local storage or default to 0
+                let count = localStorage.getItem(selectedFood.value) || 0;
+
+                // Increment the count
+                count++;
+                localStorage.setItem(selectedFood.value, count);
+
+                // Update the display
+                updateResults();
+            } else {
+                alert('Please select a food item to vote.');
+            }
+        }
+
+        // Function to update the results display
+        function updateResults() {
+            document.getElementById('biryaniCount').innerText = localStorage.getItem('biryani') || 0;
+            document.getElementById('parottaCount').innerText = localStorage.getItem('parotta') || 0;
+            document.getElementById('shawarmaCount').innerText = localStorage.getItem('shawarma') || 0;
+            document.getElementById('grillChickenCount').innerText = localStorage.getItem('grill-chicken') || 0;
+        }
+
+        // Call the updateResults function on page load
+        updateResults();
+    </script>
+
+</body>
+</html>
